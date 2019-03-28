@@ -3,11 +3,18 @@ import '../style.css'
 
 class Form extends Component {
 
+   handleSubmit = event => {
+      event.preventDefault();
+      const searchTerm = document.getElementById('bookInput').value;
+      console.log('searchTerm:', searchTerm);
+      this.props.populateBooks(searchTerm);
+   }
+
    render() {
       return (
-         <form className="d-flex flex-column">
+         <form className="d-flex flex-column" onSubmit={this.handleSubmit}>
             <div className="form-group">
-               <label for="bookInput">Search Books</label>
+               <label htmlFor="bookInput">Search Books</label>
                <input type="text" className="form-control" id="bookInput" placeholder="On the Origin of Species" name="bookInput" />
             </div>
             <button type="submit" className="btn btn-primary align-self-end">Submit</button>

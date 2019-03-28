@@ -5,10 +5,10 @@ class Jumbotron extends Component {
 
    render() {
       return (
-         <div class="jumbotron jumbotron-fluid">
-            <div class="container">
+         <div className="jumbotron jumbotron-fluid">
+            <div className="container">
                <h1>React Google Books Search</h1>
-               <p>Search for and save books of interest.</p>
+               <span>Search for and save books of interest.</span>
             </div>
          </div>
       );

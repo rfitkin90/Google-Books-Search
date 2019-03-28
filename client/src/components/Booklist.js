@@ -1,19 +1,27 @@
 import React, { Component } from "react";
-import '../style.css'
+import '../style.css';
+import BookDiv from './BookDiv';
 
-class Booklist extends Component {
+class BookList extends Component {
 
    render() {
       return (
-         <form className="d-flex flex-column">
-            <div className="form-group">
-               <label for="bookInput">Search Books</label>
-               <input type="text" className="form-control" id="bookInput" placeholder="On the Origin of Species" name="bookInput" />
-            </div>
-            <button type="submit" className="btn btn-primary align-self-end">Submit</button>
-         </form>
+         <div>
+            {this.props.books.map((elem, i) => (
+               <BookDiv
+                  key={elem._id}
+                  id={elem._id}
+                  title={elem.title}
+                  authors={elem.authors}
+                  description={elem.description}
+                  image={elem.image}
+                  link={elem.link}
+                  date={elem.date}
+               />
+            ))}
+         </div>
       );
    }
 }
 
-export default Booklist;
+export default BookList;
