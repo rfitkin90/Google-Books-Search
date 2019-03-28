@@ -15,7 +15,7 @@ class Form extends Component {
          <form className="d-flex flex-column" onSubmit={this.handleSubmit}>
             <div className="form-group">
                <label htmlFor="bookInput">Search Books</label>
-               <input type="text" className="form-control" id="bookInput" placeholder="On the Origin of Species" name="bookInput" />
+               <input type="text" className="form-control" id="bookInput" placeholder="Leave blank to search all books" name="bookInput" />
             </div>
             <button type="submit" className="btn btn-primary align-self-end">Submit</button>
          </form>

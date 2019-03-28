@@ -44,7 +44,7 @@ class BookDiv extends Component {
                   <span>Written by {this.props.authors}</span>
                </div>
                <div className="col-md-3">
-                  <div className="book-buttons-div d-flex justify-content-end">
+                  <div className="book-buttons-div d-flex justify-content-end align-items-end">
                      <a className="btn btn-primary view-btn" href={this.props.link} target="blank">View</a>
                      {this.renderStorageBtn()}
                   </div>
