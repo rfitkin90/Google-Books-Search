@@ -30,6 +30,7 @@ class Search extends Component {
                   populateBooks={this.populateBooks}
                />
                <BookList
+                  page={'Search'}
                   books={this.state.books}
                />
             </div>

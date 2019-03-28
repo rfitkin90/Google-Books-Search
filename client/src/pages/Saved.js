@@ -13,11 +13,14 @@ class Saved extends Component {
    }
 
    componentDidMount() {
-
+      // get savesArr from localStorage
+      var savesArr = JSON.parse(localStorage.getItem('saves'));
+      console.log('savesArr:', savesArr);
+      if (savesArr) this.populateSaves(savesArr);
    }
 
    populateSaves = savesArr => {
-      axios.get('/api/books/' + searchTerm)
+      axios.get('/api/savedbooks/' + savesArr)
          .then(res => this.setState({ books: res.data }))
          .catch(err => console.log(err));
    }
@@ -25,11 +28,16 @@ class Saved extends Component {
    render() {
       return (
          <div>
+            {console.log(this.state.books)}
             <Navbar page={'Saved'} />
             <Jumbotron />
-            <BookList
-               books={this.state.books}
-            />
+            <div className="container">
+               <BookList
+                  page={'Saved'}
+                  books={this.state.books}
+                  populateSaves={this.populateSaves}
+               />
+            </div>
          </div>
       );
    }

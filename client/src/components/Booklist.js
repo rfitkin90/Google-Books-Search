@@ -9,6 +9,7 @@ class BookList extends Component {
          <div>
             {this.props.books.map((elem, i) => (
                <BookDiv
+                  page={this.props.page}
                   key={elem._id}
                   id={elem._id}
                   title={elem.title}
@@ -17,6 +18,7 @@ class BookList extends Component {
                   image={elem.image}
                   link={elem.link}
                   date={elem.date}
+                  populateSaves={this.props.populateSaves}
                />
             ))}
          </div>

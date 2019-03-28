@@ -17,8 +17,10 @@ router.get('/books/:searchTerm', (req, res) => {
 });
 
 // get all books from the saves array
-router.get('/books/:savesArr', (req, res) => {
-   model.find({ _id: { $in: savesArr } })
+router.get('/savedbooks/:savesArr', (req, res) => {
+   const savesArray = req.params.savesArr.split(',');
+   console.log('req.params.savesArr:', savesArray);
+   db.Book.find({ _id: { $in: savesArray } })
       .then(data => res.json(data))
       .catch(err => console.log(err));
 });

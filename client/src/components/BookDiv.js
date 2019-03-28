@@ -16,6 +16,24 @@ class BookDiv extends Component {
       localStorage.setItem('saves', JSON.stringify(savesArr));
    }
 
+   deleteBook = event => {
+      console.log(event.target.id);
+      var savesArr = [];
+      savesArr = JSON.parse(localStorage.getItem('saves'));
+      const i = savesArr.indexOf(event.target.id);
+      savesArr.splice(i, 1);
+      localStorage.setItem('saves', JSON.stringify(savesArr));
+      this.props.populateSaves(savesArr);
+   }
+
+   renderStorageBtn = () => {
+      if (this.props.page === 'Search') {
+         return <button onClick={this.saveBook} className="btn btn-primary save-btn" id={this.props.id}>Save</button>
+      } else if (this.props.page === 'Saved') {
+         return <button onClick={this.deleteBook} className="btn btn-primary delete-btn" id={this.props.id}>Delete</button>
+      }
+   }
+
    render() {
       return (
          <div className="book-div">
@@ -28,7 +46,7 @@ class BookDiv extends Component {
                <div className="col-md-3">
                   <div className="book-buttons-div d-flex justify-content-end">
                      <a className="btn btn-primary view-btn" href={this.props.link} target="blank">View</a>
-                     <button onClick={this.saveBook} className="btn btn-primary save-btn" id={this.props.id}>Save</button>
+                     {this.renderStorageBtn()}
                   </div>
                </div>
             </div>
