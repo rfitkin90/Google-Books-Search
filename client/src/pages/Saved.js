@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Navbar from '../components/Navbar';
 import Jumbotron from '../components/Jumbotron';
-import BookList from '../components/BookList';
+import BookList from '../components/Booklist';
 import axios from "axios";
 
 class Saved extends Component {
