@@ -2,28 +2,14 @@
 
 ## About This Boilerplate
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+1. Enter a search term to search for books with titles that include that term(leave the search field blank to search all books).
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+![https://i.imgur.com/07gZ3Pe.png](https://i.imgur.com/07gZ3Pe.png)
 
-## Starting the app locally
+2. Click a book's 'View' button to bring up its Google Books page.
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+![https://i.imgur.com/lpI0p8Y.png](https://i.imgur.com/lpI0p8Y.png)
 
-```
-yarn install
-```
+3. Click the 'Save' button to permanently add the book to your 'Saved' page. You may delete books from your 'Saved' page at any time by clicking the Delete button.
 
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-yarn start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+![https://i.imgur.com/I3vDDMU.png](https://i.imgur.com/I3vDDMU.png)
