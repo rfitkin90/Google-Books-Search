@@ -28,24 +28,24 @@ class BookDiv extends Component {
 
    renderStorageBtn = () => {
       if (this.props.page === 'Search') {
-         return <button onClick={this.saveBook} className="btn btn-primary save-btn" id={this.props.id}>Save</button>
+         return <button onClick={this.saveBook} className="btn btn-primary save-btn" id={this.props.book._id}>Save</button>
       } else if (this.props.page === 'Saved') {
-         return <button onClick={this.deleteBook} className="btn btn-primary delete-btn" id={this.props.id}>Delete</button>
+         return <button onClick={this.deleteBook} className="btn btn-primary delete-btn" id={this.props.book._id}>Delete</button>
       }
    }
 
    render() {
       return (
          <div className="book-div">
-
+            {console.log(this.props.book)}
             <div className="row first-book-row">
                <div className="col-md-9">
-                  <h3>{this.props.title}</h3>
-                  <span>Written by {this.props.authors}</span>
+                  <h3>{this.props.book.title}</h3>
+                  <span>Written by {this.props.book.authors}</span>
                </div>
                <div className="col-md-3">
                   <div className="book-buttons-div d-flex justify-content-end align-items-end">
-                     <a className="btn btn-primary view-btn" href={this.props.link} target="blank">View</a>
+                     <a className="btn btn-primary view-btn" href={this.props.book.link} target="blank">View</a>
                      {this.renderStorageBtn()}
                   </div>
                </div>
@@ -53,10 +53,10 @@ class BookDiv extends Component {
 
             <div className="row">
                <div className="col-md-3 d-flex align-items-center justify-content-center">
-                  <img className="book-image" src={this.props.image} alt={this.props.title} />
+                  <img className="book-image" src={this.props.book.image} alt={this.props.book.title} />
                </div>
                <div className="col-md-9">
-                  <span>{this.props.description}</span>
+                  <span>{this.props.book.description}</span>
                </div>
             </div>
          </div>
