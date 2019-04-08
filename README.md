@@ -1,5 +1,7 @@
 # Create React Express App
 
+Allows the user to search for some books from the Google books API and save them to a favorites section for later viewing.
+
 ## About This Boilerplate
 
 1. Enter a search term to search for books with titles that include that term(leave the search field blank to search all books).
